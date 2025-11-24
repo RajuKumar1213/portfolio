@@ -20,9 +20,11 @@ import React from "react";
 import { Button } from "../ui/button";
 import { useSidebarStore } from "@/store/sidebarStore";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 function SideMenus() {
   const { isOpen, open, close } = useSidebarStore();
+  const pathname = usePathname();
 
   // console.log(isOpen);
 
@@ -30,19 +32,19 @@ function SideMenus() {
     {
       id: 1,
       name: "Home",
-      href: "/home",
+      href: "/portfolio",
       icon: Home,
     },
     {
       id: 2,
       name: "Experience",
-      href: "/experience",
+      href: "/portfolio/experience",
       icon: BaggageClaim,
     },
     {
       id: 3,
       name: "Project",
-      href: "/project",
+      href: "/portfolio/project",
       icon: Pencil,
     },
     {
@@ -107,54 +109,6 @@ function SideMenus() {
     },
   ];
 
-  // const resources = [
-  //   {
-  //     id: 7,
-  //     name: "Blog",
-  //     href: "/blog",
-  //     icon: BaggageClaim,
-  //   },
-  //   {
-  //     id: 8,
-  //     name: "Documentation",
-  //     href: "/documentation",
-  //     icon: GitBranch,
-  //   },
-  //   {
-  //     id: 9,
-  //     name: "Support",
-  //     href: "/support",
-  //     icon: Pencil,
-  //   },
-  // ];
-
-  // const connect = [
-  //   {
-  //     id: 10,
-  //     name: "Contact",
-  //     href: "/contact",
-  //     icon: Phone,
-  //   },
-  //   {
-  //     id: 11,
-  //     name: "X",
-  //     href: "https://www.x.com",
-  //     icon: X,
-  //   },
-  //   {
-  //     id: 12,
-  //     name: "Linkedin",
-  //     href: "https://www.linkedin.com",
-  //     icon: Linkedin,
-  //   },
-  //   {
-  //     id: 13,
-  //     name: "Github",
-  //     href: "https://www.github.com",
-  //     icon: Github,
-  //   },
-  // ];
-
   return (
     <div className="flex flex-col justify-between h-[calc(100vh-100px)] relative">
       <div>
@@ -164,7 +118,11 @@ function SideMenus() {
               <Link href={menu.href} className=" ">
                 <li
                   key={menu.id}
-                  className={`flex items-center justify-between hover:bg-border ${
+                  className={`flex items-center justify-between ${
+                    pathname === menu.href
+                      ? "bg-primary text-primary-foreground"
+                      : "hover:bg-border"
+                  } ${
                     isOpen ? "p-0" : "py-2"
                   } rounded-md cursor-pointer px-2.5 gap-2 font-semibold text-sm`}
                 >
@@ -188,7 +146,11 @@ function SideMenus() {
                     <Button
                       variant="ghost"
                       size="sm"
-                      className="text-xs outline-none cursor-pointer"
+                      className={`text-xs outline-none cursor-pointer ${
+                        pathname === menu.href
+                          ? "hover:bg-primary/80 hover:text-primary-foreground"
+                          : ""
+                      }`}
                     >
                       <GitCompareArrows className="h-2 w-2" /> {menu.id}{" "}
                     </Button>
