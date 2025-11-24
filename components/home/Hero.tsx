@@ -16,13 +16,13 @@ export function Hero() {
           Available for Work
         </div>
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground">
-          Hi, I'm <span className="text-primary">Rajiv</span>
+          Hi, I&apos;m <span className="text-primary">Rajiv</span>
           <br />
           <span className="text-muted-foreground">Full Stack Developer.</span>
         </h1>
         <p className="text-lg md:text-xl text-muted-foreground max-w-lg leading-relaxed">
           I build accessible, pixel-perfect, secure, and performant web
-          applications. Let's turn your vision into reality.
+          applications. Let&apos;s turn your vision into reality.
         </p>
 
         <div className="flex flex-wrap gap-4 pt-4">

@@ -1,5 +1,4 @@
-import Image from "next/image";
-import React from "react";
+
 import SideMenus from "./SideMenus";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useSidebarStore } from "@/store/sidebarStore";

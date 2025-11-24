@@ -1,5 +1,4 @@
 import {
-  ArrowUpNarrowWide,
   BaggageClaim,
   GitBranch,
   GitCompareArrows,
@@ -12,11 +11,9 @@ import {
   PanelRightClose,
   Pencil,
   Phone,
-  TrendingUp,
   User,
   X,
 } from "lucide-react";
-import React from "react";
 import { Button } from "../ui/button";
 import { useSidebarStore } from "@/store/sidebarStore";
 import Link from "next/link";
