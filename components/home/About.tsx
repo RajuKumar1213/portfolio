@@ -19,7 +19,7 @@ export function About() {
             <p className="text-muted-foreground text-lg leading-relaxed">
               I specialize in modern JavaScript frameworks like React, Next.js, and Node.js. 
               I am always eager to learn new technologies and improve my skills. 
-              When I'm not coding, you can find me exploring new places, reading books, or playing video games.
+              When I&apos;m not coding, you can find me exploring new places, reading books, or playing video games.
             </p>
             
             <div className="grid grid-cols-2 gap-4 pt-4">

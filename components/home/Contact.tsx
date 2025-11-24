@@ -14,7 +14,7 @@ export function Contact() {
             Get in <span className="text-primary">Touch</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Have a project in mind or just want to say hi? I'd love to hear from you.
+            Have a project in mind or just want to say hi? I&apos;d love to hear from you.
           </p>
         </div>
 

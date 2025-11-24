@@ -14,7 +14,7 @@ export default function ExperiencePage() {
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             A journey through my professional career, highlighting key roles,
-            projects, and the technologies I've mastered along the way.
+            projects, and the technologies I&apos;ve mastered along the way. 
           </p>
         </div>
 
