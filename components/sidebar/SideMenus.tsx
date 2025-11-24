@@ -184,9 +184,6 @@ function SideMenus() {
                     </span>
                   </div>
 
-                  {/* <span className="text-[10px] inline-flex rounded-[4px] items-center justify-center border p-1">
-              
-            </span> */}
                   {isOpen && (
                     <Button
                       variant="ghost"

@@ -1,12 +1,5 @@
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import { redirect } from "next/navigation";
 
 export default function Home() {
-  return (
-    <div className="flex items-center justify-center h-screen ">
-      <Link href="/portfolio">
-        <Button>Go to portfolio</Button>
-      </Link>
-    </div>
-  );
+  redirect("/portfolio");
 }

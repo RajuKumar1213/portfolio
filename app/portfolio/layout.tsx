@@ -21,17 +21,21 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex bg-background text-foreground ">
       <aside
-        className={`${isOpen ? "w-64 fixed md:static h-full z-50" : "md:w-18 w-0 hidden md:block"} 
+        className={`${
+          isOpen
+            ? "w-64 fixed md:static h-full z-50"
+            : "md:w-18 w-0 hidden md:block"
+        } 
     transition-all duration-300 ease-in-out bg-secondary`}
       >
         <Sidebar />
       </aside>
       <main className="flex flex-col overflow-auto h-screen relative flex-1 w-screen">
-        <div className="fixed w-full flex items-center top-0 h-15 bg-secondary/80 backdrop-blur-xl text-secondary-foreground">
+        <div className="fixed w-full flex items-center top-0 h-15 bg-secondary/50 backdrop-blur-sm text-secondary-foreground z-[999]">
           <Header />
         </div>
 
-        <div className=" md:w-6xl w-screen mt-20 mx-auto m-4">{children}</div>
+        <div className="md:w-6xl w-full mx-auto">{children}</div>
       </main>
     </div>
   );

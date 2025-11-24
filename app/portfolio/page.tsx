@@ -1,12 +1,19 @@
-import React from 'react';
-import ShowProducts from '../../components/ShowProducts';
+import { Hero } from "@/components/home/Hero";
+import { About } from "@/components/home/About";
+import { Skills } from "@/components/home/Skills";
+import { Projects } from "@/components/home/Projects";
+import { Contact } from "@/components/home/Contact";
+import { Footer } from "@/components/home/Footer";
 
-function page() {
+export default function PortfolioHome() {
   return (
-    <div className=' flex flex-col gap-4'>
-      <ShowProducts />
+    <div className="flex flex-col gap-0">
+      <Hero />
+      <About />
+      <Skills />
+      <Projects />
+      <Contact />
+      <Footer />
     </div>
   );
 }
-
-export default page;
