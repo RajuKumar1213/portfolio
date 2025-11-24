@@ -7,7 +7,6 @@ import { Button } from "../ui/button";
 import { Menu } from "lucide-react";
 
 function Sidebar() {
-  
   const { isOpen, toggle } = useSidebarStore();
   return (
     <div className="p-4 bg-secondary text-secondary-foreground h-full">
@@ -21,20 +20,25 @@ function Sidebar() {
           <AvatarFallback>CN</AvatarFallback>
         </Avatar>
         <div
-          className={`transition-all flex  duration-300 overflow-hidden
+          className={`transition-all flex gap-4 duration-300 overflow-hidden
         ${isOpen ? "opacity-100 max-w-[200px]" : "opacity-0 max-w-0"}`}
         >
           <div>
-            <h2 className="font-extrabold whitespace-nowrap">
-            Rajiv Vishwakarma
-          </h2>
-          <p className="text-xs font-semibold whitespace-nowrap">
-            Full Stack Developer
-          </p>
+            <h2 className="font-extrabold text-sm md:text-base whitespace-nowrap">
+              Rajiv Vishwakarma
+            </h2>
+            <p className="text-xs font-semibold whitespace-nowrap">
+              Full Stack Developer
+            </p>
           </div>
-            <Button onClick={toggle} variant="ghost" size="icon" className="md:hidden block">
-        <Menu />
-      </Button>
+          <Button
+            onClick={toggle}
+            variant="ghost"
+            size="icon"
+            className="md:hidden block"
+          >
+            <Menu />
+          </Button>
         </div>
       </div>
 
