@@ -47,7 +47,7 @@ function SideMenus() {
     {
       id: 4,
       name: "Products",
-      href: "/products",
+      href: "/portfolio/products",
       icon: KeyRound,
     },
     {
