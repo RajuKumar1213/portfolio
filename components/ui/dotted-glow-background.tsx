@@ -46,17 +46,17 @@ export const DottedGlowBackground = ({
   className,
   gap = 12,
   radius = 2,
-  color = "rgba(11, 77, 243, 0.7)",
-  darkColor,
-  glowColor = "rgba(0, 170, 255, 0.85)",
-  darkGlowColor,
+  color = "rgba(45, 45, 246, 0.7)",
+  darkColor = "rgba(45, 45, 246, 0.7)",
+  glowColor = "rgba(43, 255, 0, 0.85)",
+  darkGlowColor = "rgba(43, 255, 0, 0.85)",
   colorLightVar,
   colorDarkVar,
   glowColorLightVar,
   glowColorDarkVar,
   opacity = 0.6,
   backgroundOpacity = 0,
-  speedMin = 0.4,
+  speedMin = 0.1,
   speedMax = 1.3,
   speedScale = 1,
 }: DottedGlowBackgroundProps) => {
@@ -68,7 +68,7 @@ export const DottedGlowBackground = ({
   // Resolve CSS variable value from the container or root
   const resolveCssVariable = (
     el: Element,
-    variableName?: string,
+    variableName?: string
   ): string | null => {
     if (!variableName) return null;
     const normalized = variableName.startsWith("--")
@@ -222,12 +222,12 @@ export const DottedGlowBackground = ({
           Math.min(width, height) * 0.1,
           width * 0.5,
           height * 0.5,
-          Math.max(width, height) * 0.7,
+          Math.max(width, height) * 0.7
         );
         grad.addColorStop(0, "rgba(0,0,0,0)");
         grad.addColorStop(
           1,
-          `rgba(0,0,0,${Math.min(Math.max(backgroundOpacity, 0), 1)})`,
+          `rgba(0,0,0,${Math.min(Math.max(backgroundOpacity, 0), 1)})`
         );
         ctx.fillStyle = grad as unknown as CanvasGradient;
         ctx.fillRect(0, 0, width, height);

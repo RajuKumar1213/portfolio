@@ -44,7 +44,7 @@ function SideMenus() {
     {
       id: 3,
       name: "Project",
-      href: "/portfolio/project",
+      href: "/portfolio/projects",
       icon: Pencil,
     },
     {
@@ -152,7 +152,7 @@ function SideMenus() {
                           : ""
                       }`}
                     >
-                      <GitCompareArrows className="h-2 w-2" /> {menu.id}{" "}
+                      <GitCompareArrows className="h-1 w-1" /> {menu.id}{" "}
                     </Button>
                   )}
                 </li>
