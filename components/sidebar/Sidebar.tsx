@@ -8,7 +8,7 @@ import { Menu } from "lucide-react";
 function Sidebar() {
   const { isOpen, toggle } = useSidebarStore();
   return (
-    <div className="p-4 bg-secondary text-secondary-foreground h-full">
+    <div className="p-4 bg-background text-secondary-foreground h-full">
       <div
         className={` flex items-center   ${
           isOpen ? "px-2 gap-2" : "justify-center"
