@@ -5,10 +5,22 @@ import Link from "next/link";
 import { HeroBackground } from "./HeroBackground";
 import Image from "next/image";
 
-export function Hero() {
+interface HeroProps {
+  name?: string;
+  role?: string;
+  description?: string;
+  imageUrl?: string;
+}
+
+export function Hero({
+  name = "Rajiv",
+  role = "Full Stack Developer.",
+  description = "I build accessible, pixel-perfect, secure, and performant web applications. Let's turn your vision into reality.",
+  imageUrl = "./images/horo.svg",
+}: HeroProps) {
   return (
     <section className="md:w-6xl w-full mx-auto h-screen flex flex-col md:flex-row items-center justify-center px-2 md:px-20  overflow-hidden">
-      <HeroBackground />
+      {/* <HeroBackground /> */}
 
       {/* Text Content */}
       <div className="   flex flex-col items-start space-y-6 z-10 animate-fade-in-up md:pt-0">
@@ -16,13 +28,12 @@ export function Hero() {
           Available for Work
         </div>
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground">
-          Hi, I&apos;m <span className="text-primary">Rajiv</span>
+          Hi, I&apos;m <span className="text-primary">{name}</span>
           <br />
-          <span className="text-muted-foreground">Full Stack Developer.</span>
+          <span className="text-muted-foreground">{role}</span>
         </h1>
         <p className="text-lg md:text-xl text-muted-foreground max-w-lg leading-relaxed">
-          I build accessible, pixel-perfect, secure, and performant web
-          applications. Let&apos;s turn your vision into reality.
+          {description}
         </p>
 
         <div className="flex flex-wrap gap-4 pt-4">
@@ -70,7 +81,7 @@ export function Hero() {
           <div className="relative w-full h-full flex items-center justify-center overflow-hidden ">
             {/* Replace with actual image later */}
             <Image
-              src={"./images/horo.svg"}
+              src={imageUrl}
               alt="hero-image"
               width={500}
               height={500}
