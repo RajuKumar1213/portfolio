@@ -18,6 +18,7 @@ import {
   useUser,
 } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
+import { Spinner } from "@/components/ui/spinner";
 
 export default function AdminLogin() {
   const { isSignedIn } = useUser();
@@ -42,7 +43,7 @@ export default function AdminLogin() {
                 <SignUpButton />
               </Button>
             </SignedOut>
-            {isSignedIn && (
+            {isSignedIn ? (
               <SignedIn>
                 <Button
                   onClick={() => router.push("/admin/dashboard")}
@@ -51,7 +52,8 @@ export default function AdminLogin() {
                   <UserButton />
                 </Button>
               </SignedIn>
-            )}
+            ) : <div className="flex items-center justify-center">
+              <Spinner className="size-6"/></div>}
           </div>
         </CardContent>
       </Card>
