@@ -8,6 +8,13 @@
       "when": 1764140082838,
       "tag": "0000_blue_secret_warriors",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1764239256946,
+      "tag": "0001_chemical_queen_noir",
+      "breakpoints": true
     }
   ]
 }
