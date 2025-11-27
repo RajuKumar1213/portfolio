@@ -53,33 +53,22 @@ function SideMenus() {
     {
       id: 5,
       name: "Services",
-      href: "/services",
+      href: "/portfolio/services",
       icon: Glasses,
     },
     {
       id: 6,
       name: "About",
-      href: "/about",
+      href: "/portfolio/about",
       icon: User,
     },
     {
       id: 7,
       name: "Blog",
-      href: "/blog",
+      href: "/portfolio/blog",
       icon: BaggageClaim,
     },
-    {
-      id: 8,
-      name: "Documentation",
-      href: "/documentation",
-      icon: GitBranch,
-    },
-    {
-      id: 9,
-      name: "Support",
-      href: "/support",
-      icon: Pencil,
-    },
+
     {
       id: 10,
       name: "Contact",
@@ -115,10 +104,10 @@ function SideMenus() {
               <Link href={menu.href} className=" ">
                 <li
                   key={menu.id}
-                  className={`flex items-center justify-between ${
+                  className={`flex py-1.5 items-center justify-between ${
                     pathname === menu.href
-                      ? "bg-primary text-primary-foreground"
-                      : "hover:bg-border"
+                      ? "text-muted-foreground"
+                      : "hover:text-primary "
                   } ${
                     isOpen ? "p-0" : "py-2"
                   } rounded-md cursor-pointer px-2.5 gap-2 font-semibold text-sm`}
@@ -130,7 +119,7 @@ function SideMenus() {
                       className="flex items-center justify-center "
                     />
                     <span
-                      className={`transition-all  duration-300 overflow-hidden whitespace-nowrap
+                      className={`transition-all duration-300 overflow-hidden whitespace-nowrap
                     ${
                       isOpen ? "opacity-400 max-w-[200px]" : "opacity-0 max-w-0"
                     }`}
@@ -138,20 +127,6 @@ function SideMenus() {
                       {menu.name}
                     </span>
                   </div>
-
-                  {isOpen && (
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      className={`text-xs outline-none cursor-pointer ${
-                        pathname === menu.href
-                          ? "hover:bg-primary/80 hover:text-primary-foreground"
-                          : ""
-                      }`}
-                    >
-                      <GitCompareArrows className="h-1 w-1" /> {menu.id}{" "}
-                    </Button>
-                  )}
                 </li>
               </Link>
               {isOpen && menu.id == 6 ? (
@@ -176,14 +151,7 @@ function SideMenus() {
           ))}
         </ul>
       </div>
-      <div className="absolute flex items-center bottom-20 right-2">
-        <span className="cursor-pointer" onClick={() => close()}>
-          {isOpen && <PanelLeftClose />}
-        </span>{" "}
-        <span className="cursor-pointer" onClick={() => open()}>
-          {!isOpen && <PanelRightClose />}
-        </span>{" "}
-      </div>
+      
     </div>
   );
 }

@@ -12,7 +12,7 @@ function Sidebar() {
       <div
         className={` flex items-center   ${
           isOpen ? "px-2 gap-2" : "justify-center"
-        } mb-3  border-b-2 pb-3`}
+        } mb-3  pb-3`}
       >
         <Avatar>
           <AvatarImage src="/images/man.jpg" alt="User Avatar" />
