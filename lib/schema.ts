@@ -5,11 +5,11 @@ export const users = pgTable("user", {
   id: text("id")
     .primaryKey()
     .$defaultFn(() => crypto.randomUUID()),
-  clerkId: text("clerk_id").notNull().unique(),
+  clerkId: text("clerkId").notNull().unique(),
   email: text("email").notNull().unique(),
   name: text("name"),
   username: text("username"),
-  imageUrl: text("image_url"),
+  imageUrl: text("imageUrl"),
   createdAt: timestamp("created_at").defaultNow(),
   updatedAt: timestamp("updated_at").defaultNow(),
 });
