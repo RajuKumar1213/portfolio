@@ -4,6 +4,7 @@ import { Skills } from "@/components/home/Skills";
 import { Projects } from "@/components/home/Projects";
 import { Contact } from "@/components/home/Contact";
 import { Footer } from "@/components/home/Footer";
+import ChatBot from "@/components/home/Chatbot";
 
 export default function PortfolioHome() {
   return (
@@ -13,6 +14,7 @@ export default function PortfolioHome() {
       <Skills />
       <Projects />
       <Contact />
+      <ChatBot />
       <Footer />
     </div>
   );
