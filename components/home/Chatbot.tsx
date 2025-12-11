@@ -1,4 +1,5 @@
 "use client";
+import ReactMarkdown from "react-markdown";
 
 import os from "os";
 import crypto from "crypto";
@@ -56,6 +57,18 @@ export default function ChatBot() {
     scrollToBottom();
   }, [messages]);
 
+  useEffect(() => {
+    const sessionId = generateSessionId();
+    fetch(`http://localhost:8000/api/chat/history/${sessionId}`)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          setMessages(data.data);
+        }
+      })
+      .catch(() => {});
+  }, []);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!input.trim() || isLoading) return;
@@ -81,6 +94,8 @@ export default function ChatBot() {
       };
       setMessages((prev) => [...prev, assistantMessage]);
     } catch (error) {
+      console.log("api error", error);
+
       const errorMessage: Message = {
         role: "assistant",
         content: "Failed to get response. Please try again.",
@@ -218,9 +233,9 @@ export default function ChatBot() {
                         : "text-gray-800"
                     }`}
                   >
-                    <p className="text-sm leading-relaxed font-semibold whitespace-pre-wrap">
-                      {formatMessage(message.content)}
-                    </p>
+                    <span className="text-sm leading-relaxed font-semibold inline-block whitespace-normal">
+                      <ReactMarkdown>{message.content}</ReactMarkdown>
+                    </span>
                   </div>
                 </div>
               ))}
