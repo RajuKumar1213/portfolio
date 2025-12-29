@@ -7,6 +7,7 @@ import {
   Home,
   KeyRound,
   Linkedin,
+  MessageCircle,
   PanelLeftClose,
   PanelRightClose,
   Pencil,
@@ -14,6 +15,7 @@ import {
   User,
   X,
 } from "lucide-react";
+
 import { Button } from "../ui/button";
 import { useSidebarStore } from "@/store/sidebarStore";
 import Link from "next/link";
@@ -93,6 +95,12 @@ function SideMenus() {
       href: "https://www.github.com",
       icon: Github,
     },
+    {
+      id: 14,
+      name: "Chat",
+      href: "/portfolio/chat",
+      icon: MessageCircle,
+    },
   ];
 
   return (
@@ -151,7 +159,6 @@ function SideMenus() {
           ))}
         </ul>
       </div>
-      
     </div>
   );
 }

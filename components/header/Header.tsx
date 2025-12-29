@@ -7,7 +7,7 @@ import { Menu, PanelLeftClose, PanelRightClose } from "lucide-react";
 function Header() {
   const { isOpen, toggle, open, close } = useSidebarStore();
   return (
-    <header className="w-full flex items-center justify-between md:px-10 mx-4 ">
+    <header className="w-full flex items-center justify-between md:px-10 mx-4 z-30 relative">
       {/* Left side */}
       <div className="flex items-center gap-4">
         <Button
